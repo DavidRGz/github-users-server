@@ -6,6 +6,7 @@ const octokit = new Octokit({
 
 export default async (req, res) => {
   try {
+    res.setHeader('Access-Control-Allow-Origin', '*');
     const username = req.query.username;
     const page = req.query.page || 1;
     const per_page = req.query.per_page || 10;
